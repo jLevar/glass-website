@@ -1,3 +1,10 @@
+:root {
+  --bg-color-1: #a23dc2;
+  --bg-color-1-dark: #6c2981;
+  --shadow-color: rgba(108, 41, 129, 0.3);
+  --bg-color-2: #4a72b5;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +12,7 @@
 }
 
 h1 {
-  color: #436696;
+  color: #6d53ac;
   font-weight: 600;
   font-size: 3rem;
   opacity: 0.8;
@@ -24,7 +31,7 @@ h3 {
 main {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
-  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  background: linear-gradient(to right top, var(--bg-color-1), var(--bg-color-2));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,8 +48,12 @@ main {
   );
   border-radius: 2rem;
   z-index: 2;
-  backdrop-filter: blur(2rem);
+  backdrop-filter: blur(1.5rem);
   display: flex;
+}
+
+.user img{
+  width: 100%;
 }
 
 .circle1,.circle2 {
@@ -58,7 +69,7 @@ main {
   border-radius: 50%;
 }
 .circle1{
-  top: 5%;
+  top: 2%;
   right: 15%;
 }
 .circle2{
@@ -96,7 +107,7 @@ main {
 }
 
 .pro {
-  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  background: linear-gradient(to right top, var(--bg-color-1), var(--bg-color-2));
   border-radius: 2rem;
   color: white;
   padding: 1rem;
@@ -105,7 +116,7 @@ main {
 
 .pro img{
   position: absolute;
-  top: -10%;
+  top: -15%;
   right: 10%
 }
 
@@ -143,11 +154,42 @@ main {
   display: flex;
   background: linear-gradient(
     to left top,
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0.8)
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.5)
     );
   border-radius: 1rem;
   margin: 2rem 0rem;
   padding: 2rem;
-  box-shadow: 6px 6px 20px rgba(112, 112, 112, 0.2);
+  box-shadow: 6px 6px 20px var(--shadow-color);
+  justify-content: space-between;
+}
+
+.progress {
+  background: linear-gradient(to left, var(--bg-color-1), var(--bg-color-1-dark));
+  width: 100%;
+  height: 25%;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.progress::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgb(236, 236, 236);
+  position: absolute;
+  left: var(--percentage, 0%);
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.percentage{
+  font-weight: bold;
+  background: linear-gradient(to right top, var(--bg-color-1), var(--bg-color-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
